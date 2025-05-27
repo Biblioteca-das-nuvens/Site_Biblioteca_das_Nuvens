@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suporte ao Cliente | Biblioteca das Nuvens</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #faeecb;
+      overflow-x: hidden;
+    }
+    header {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background: #b3c7e6;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+
+    .imagem_logo {
+      width: 70px;
+      height: 70px;
+    }
+
+    .search-bar {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      max-width: 500px;
+      margin: 10px;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      width: 100%;
+    }
+
+    .search-bar button {
+      background-color: #fad9a8;
+      border: none;
+      padding: 10px;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: text-decoration 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .faq {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      background-color: #f1f1f1;
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    .chat-btn {
+      display: inline-block;
+      padding: 15px 25px;
+      margin-top: 30px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .chat-btn:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+            background: #fad9a8;
+            height: 100px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo_biblioteca_das_nuvens.png" alt="Logo da Biblioteca das Nuvens" class="imagem_logo" />
+    
+  </header>
+
+  <div class="container">
+    <h1>Suporte ao Cliente</h1>
+    <p>Precisa de ajuda? Confira nossas perguntas frequentes ou fale diretamente com um atendente.</p>
+
+    <div class="faq">
+      <h2>Perguntas Frequentes</h2>
+
+      <div class="faq-item">
+        <strong>Como entro em contato com o suporte?</strong>
+        <p>Você pode enviar um e-mail para <a href="mailto:suporte@exemplo.com">suporte@exemplo.com</a> ou acessar nosso chat ao vivo.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Qual o horário de atendimento?</strong>
+        <p>Nosso suporte funciona de segunda a sexta, das 8h às 18h.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Como posso acompanhar meu pedido?</strong>
+        <p>Acesse a área de pedidos em sua conta e verifique o status atualizado.</p>
+      </div>
+    </div>
+
+    <a href="chatboot.html" class="chat-btn">💬 Fale com um atendente</a>
+  </div>
+
+  <footer>
+   
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(ChatGPT\ Image\ 27\ de\ abr.\ de\ 2025,\ 19_48_09.png);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .reset-container {
+            background-color: #f4f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 350px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .reset-container h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        header {
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            background: #b3c7e6;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 70px;
+            font-family: cursive;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .imagem_logo {
+            height: 70px;
+        }
+
+        @media (max-width: 600px) {
+            .imagem_logo {
+                height: 50px;
+            }
+            .reset-container img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header><img src="logo_biblioteca_das_nuvens.png" width="70px" height="70px" margim="100px" class="imagem_logo"></header>
+    <div class="reset-container">
+        <img src="logo_biblioteca_das_nuvens.png" width="200px" height="200px">
+        <h1>Redefinir Senha</h1>
+        
+        <form action="/processa_redefinicao" method="POST">
+            <input type="password" name="nova_senha" placeholder="Nova senha" required>
+            <input type="password" name="confirma_senha" placeholder="Confirmar senha" required>
+            <button type="submit">Redefinir</button>
+        </form>
+    </div>
+</body>
+</html>

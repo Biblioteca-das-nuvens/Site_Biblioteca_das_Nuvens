@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página do Usuário - E-book</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #faeecb;
+    }
+
+    header {
+      background-color: #B3C7E6;
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .logo {
+      height: 50px;
+      margin-left: 10px;
+    }
+
+    .home-link {
+      position: absolute;
+      right: 20px;
+    }
+
+    .home-icon {
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    h2, h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    ul li {
+      background: #f9f9f9;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    ul li div {
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 8px 15px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .download-btn {
+      background-color: #28a745;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+      padding: 10px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-family: inherit;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    form label {
+      font-weight: bold;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      font-family: inherit;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 80px 15px;
+        padding: 20px;
+      }
+
+      ul li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      ul li div {
+        margin-top: 10px;
+        align-self: flex-end;
+      }
+    }
+  </style>
+
+  <script>
+    function confirmarCancelamento() {
+      if (confirm("Tem certeza que deseja cancelar sua conta? Esta ação não pode ser desfeita.")) {
+        alert("Conta cancelada com sucesso.");
+      }
+    }
+
+    function logout() {
+      alert("Você saiu da conta com sucesso!");
+      window.location.href = 'formulario.html';
+    }
+
+    function adicionarLivro(event) {
+      event.preventDefault();
+
+      const titulo = document.getElementById('titulo').value;
+      const descricao = document.getElementById('descricao').value;
+      const preco = document.getElementById('preco').value;
+
+      const container = document.getElementById('livrosPublicados');
+      const livroHTML = `
+        <div style="background: #f1f1f1; margin-top: 15px; padding: 10px; border-radius: 8px;">
+          <h4>${titulo}</h4>
+          <p>${descricao}</p>
+          <p><strong>Preço:</strong> R$ ${parseFloat(preco).toFixed(2)}</p>
+          <p><em>Arquivo enviado (visualização local apenas para simulação).</em></p>
+        </div>
+      `;
+
+      container.innerHTML += livroHTML;
+      document.getElementById('formVenda').reset();
+      alert("E-book adicionado com sucesso!");
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <a href="iiindex.html" class="home-link">
+      <img src="casinha.png" alt="Início" class="home-icon">
+    </a>
+    <img src="logo_biblioteca_das_nuvens.png" alt="Logo" class="logo">
+  </header>
+
+  <div class="container">
+    <h2>Bem-vindo, <span id="nomeUsuario">Usuário</span></h2>
+
+    <h3>Histórico de Compras</h3>
+    <ul>
+      <li>
+        Contos de Elfo
+        <div>
+          <button onclick="window.location.href='detalhes.html'">Ver detalhes</button>
+          <button class="download-btn" onclick="window.location.href='ebooks/ebook1.pdf'">Download</button>
+        </div>
+      </li>
+      <li>
+        Limbo
+        <div>
+          <button>Ver detalhes</button>
+          <button class="download-btn" onclick="window.location.href='ebooks/ebook2.pdf'">Download</button>
+        </div>
+      </li>
+    </ul>
+
+    <h3>Gerenciar Conta</h3>
+    <button onclick="window.location.href ='redefinir senha.html'">Alterar Senha</button>
+    <button onclick="logout()">Sair da Conta</button>
+
+    <h3>Meios de Pagamento</h3>
+    <ul>
+      <li>Cartão Visa ****1234 <button onclick="window.location.href='gerenciamentodecartoes.html'">Gerenciar</button></li>
+    </ul>
+
+    <h3>Cancelar Conta</h3>
+    <button onclick="window.location.href='cancelamento de conta.html'">Cancelar Conta</button>
+
+    <h3>Suporte</h3>
+    <p>Precisa de ajuda? Entre em contato conosco.</p>
+    <button onclick="window.location.href='suporte.html'">Acessar Suporte</button>
+
+    <h3>Preferências</h3>
+    <p>Configure sua conta conforme suas necessidades.</p>
+    <button onclick="window.location.href='configuraçoes do usuario.html'">Alterar Preferências</button>
+
+    <h3>Avaliações</h3>
+    <p>Deixe sua opinião sobre os e-books:</p>
+    <textarea placeholder="Escreva sua avaliação..."></textarea>
+    <button>Enviar Avaliação</button>
+
+   
+    <h3>Adicionar E-book para Venda</h3>
+    <form id="formVenda" onsubmit="adicionarLivro(event)">
+      <label for="titulo">Título do E-book:</label>
+      <input type="text" id="titulo" name="titulo" required><br>
+
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" name="descricao" required></textarea><br>
+
+      <label for="preco">Preço (R$):</label>
+      <input type="number" id="preco" name="preco" step="0.01" required><br>
+
+      <label for="arquivo">Arquivo do E-book (PDF):</label>
+      <input type="file" id="arquivo" name="arquivo" accept=".pdf" required><br>
+
+      <button type="submit">Publicar E-book</button>
+    </form>
+
+    <div id="livrosPublicados"></div>
+  </div>
+
+</body>
+</html>
