@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações do Perfil</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #faeecb;
+            margin: 0;
+            padding-top: 80px;
+            padding-bottom: 120px;
+        }
+
+        header {
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            background: #b3c7e6;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .imagem_logo {
+            height: 70px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 25px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background: #fad9a8;
+            height: 100px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            input, select {
+                font-size: 15px;
+            }
+
+            button {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo_biblioteca_das_nuvens.png" alt="Logo Biblioteca das Nuvens" class="imagem_logo">
+    </header>
+
+    <div class="container">
+        <h1>Configurações do Perfil</h1>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" placeholder="Seu nome">
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" placeholder="Seu e-mail">
+
+        <label for="preferencias">Preferências de Leitura:</label>
+        <select id="preferencias">
+            <option value="claro">Modo Claro</option>
+            <option value="escuro">Modo Escuro</option>
+        </select>
+
+        <label for="notificacoes">Notificações:</label>
+        <select id="notificacoes">
+            <option value="ativadas">Ativadas</option>
+            <option value="desativadas">Desativadas</option>
+        </select>
+
+        <button>Salvar Alterações</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Biblioteca das Nuvens</p>
+    </footer>
+
+</body>
+</html>

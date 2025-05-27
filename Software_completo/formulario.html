@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página de Login</title>
+  <style>
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("Leitura\ e\ Relaxamento\ em\ Harmonia.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    width: 100%;
+    padding: 100px 20px 120px;
+    z-index: 1;
+}
+
+.texto {
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+    color: #0c0c0e;
+    text-align: center;
+}
+
+.login-container {
+    background-color: rgba(244, 244, 248, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.login-container h1 {
+    color: #0076df;
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-container button {
+    background-color: #0076df;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-container button:hover {
+    background-color: #005bb5;
+}
+
+.login-container a {
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #0076df;
+    font-size: 14px;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+header {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    background: #b3c7e6;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 70px;
+    font-family: cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+footer {
+    background: #fad9a8;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    padding: 10px;
+    bottom: 0;
+}
+
+.imagem_logo {
+    height: 70px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .texto {
+        text-align: center;
+    }
+    .login-container img {
+        width: 150px;
+        height: 150px;
+    }
+}
+  </style>
+</head>
+<body>
+<header><img src="logo_biblioteca_das_nuvens.png" width="70px" height="70px"  class="imagem_logo"></header>
+  <div class="container">
+    <div class="texto">
+      <h1>Digite seu e-mail e sua senha para iniciar sessão</h1>
+    </div>
+    <div class="login-container">
+      <img src="logo_biblioteca_das_nuvens.png" width="200px" height="200px" alt="Logo">
+      <h1>Entrar</h1>
+      <form onsubmit="return fazerLogin(event)">
+        <input type="email" id="email" placeholder="E-mail ou telefone" required>
+        <input type="password" id="senha" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+      </form>
+      <a href="redefinir senha.html">Esqueceu sua senha?</a>
+      <a href="cadastro.html">Criar uma nova conta</a>
+    </div>
+  </div>
+<footer></footer>
+
+<script>
+  function fazerLogin(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const senha = document.getElementById("senha").value.trim();
+
+    if (email !== "" && senha !== "") {
+      window.location.href = "pagina de usuario.html";
+    } else {
+      alert("Por favor, preencha todos os campos.");
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca das Nuvens</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #faeecb;
+      overflow-x: hidden;
+    }
+    
+
+    header {
+      background-color: #b3c7e6;
+      color: white;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .search-bar {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      max-width: 500px;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .search-bar button {
+      border: none;
+      background-color: #fad9a8;
+      color: white;
+      padding: 10px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+
+    .imagem_logo {
+      width: 70px;
+      height: 70px;
+      margin-left: 20rem;
+      
+    }
+
+    .banner {
+      width: 100%;
+      height: 519px;
+      background: url('banner principal.png') center / cover no-repeat;
+    }
+
+    .ebook-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px 10px;
+    }
+
+    .ebook {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      width: 250px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      flex: 1 1 250px;
+      max-width: 250px;
+    }
+
+    .ebook img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    .ebook-title {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    .buy-button
+     {
+      margin-top: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+    .buy-button:hover {
+      background-color: #218838;
+    }
+
+    footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  
+  
+  
+      
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    .carousel {
+       width: 100%;
+       height: 200px;
+  overflow: hidden;
+  position: relative;
+  background-color: #e7e7e7;
+  margin-top: 20px;
+    }
+
+    .carousel-slide {
+      display: none;
+  width: 100%;
+  height: 100%;
+    }
+
+    .carousel-slide.active {
+      display: block;
+      animation: fadeIn 1s;
+    }
+    .carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .description-button {
+      margin-top: 10px;
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+    
+    .description-button:hover {
+      background-color: #e68900;
+    }
+    
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo_biblioteca_das_nuvens.png" alt="Logo" class="imagem_logo" />
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar..." />
+      <button>🔍</button>
+    </div>
+    <nav>
+      <a href="formulario.html">Entrar</a>
+      <a href="cadastro.html">Criar Conta</a>
+      <a href="carrinho.html">
+        <img src="carrinhoicone.png" alt="Carrinho" style="width: 30px; height: 30px;">
+      </a>
+    </nav>
+  </header>
+
+  <div class="banner"></div>
+  <div class="carousel">
+    <div class="carousel-slide active"><img src="1.png"></div>
+    <div class="carousel-slide"><img src="2.png"></div>
+    <div class="carousel-slide"><img src="3.png"></div>
+  </div>
+<h1 style="margin-left: 60px;">Livros em Alta</h1>
+  <div class="ebook-container">
+    
+    <div class="ebook">
+      <img src="O ILUMINADO.jfif" alt="O ILUMINADO" />
+      <div class="ebook-title">O ILUMINADO</div>
+      <div class="ebook-title">R$ 109,90</div>
+      <button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button>
+      <button class="description-button" onclick="window.location.href='descricaoiluminado.html'">Descrição</button>
+    </div>
+
+    <div class="ebook"><img src="IT A COISA.jpg" alt="IT A COISA"><div class="ebook-title">IT A COISA</div><div class="ebook-title">R$ 139,90</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='descricaoitacoisa.html'">Descrição</button></div>
+    <div class="ebook"><img src="batalhaapocalipse.jpg" alt="Livro 2"><div class="ebook-title">A batalha do apocalipse: Da queda dos anjos ao crepúsculo do mundo</div><div class="ebook-title">R$ 42,50</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='descricaoABatalhadoApocalipse.html'">Descrição</button></div>
+    <div class="ebook"><img src="anjosdamorte.jpg" alt="Livro 3"><div class="ebook-title">Anjos da Morte - Filhos do Éden - vol. 2</div><div class="ebook-title">R$ 56,38</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='anjosdamorte.html'">Descrição</button></div>
+    <div class="ebook"><img src="annefrank.jpg" alt="Livro 4"><div class="ebook-title">Anne Frank</div><div class="ebook-title">R$ 58,86</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='descricaoannefrank.html'">Descrição</button></div>
+    <div class="ebook"><img src="harrypotter.jpg" alt="Livro 5"><div class="ebook-title">Além do Mapa do Maroto: Explorando as Curiosidades Mais Fascinantes de Harry Potter </div><div class="ebook-title">R$ 32,50</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='descricaoHarryPotter.html'">Descrição</button></div>
+    <div class="ebook"><img src="herdeiros.jpg" alt="Livro 6"><div class="ebook-title">Herdeiros de Atlântida - Filhos do Éden - vol. 1</div><div class="ebook-title">R$ 39,50</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='descricaoHerdeirosdeAtlântida.html'">Descrição</button></div>
+    <div class="ebook"><img src="Paraisoperdido.jpg" alt="Livro 7"><div class="ebook-title">Paraíso perdido - Filhos do Éden - vol. 3</div><div class="ebook-title">R$ 46,90</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='descricaoParaísoPerdido.html'">Descrição</button></div>
+    <div class="ebook"><img src="PEGASUSBATALHAOLIMPO.jpg" alt="Livro 8"><div class="ebook-title">Pegasus e a batalha pelo Olimpo (Olimpo em guerra Livro 2)</div><div class="ebook-title">R$ 58,50</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='descricaobatalhapeloolimpio.html'">Descrição</button></div>
+    <div class="ebook"><img src="pegasuseasorigens.jpg" alt="Livro 9"><div class="ebook-title">Pegasus e as origens do Olimpo (Olimpo em guerra Livro 4) </div><div class="ebook-title">R$ 27,90</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='descricaopegasusorigemolimpo.html'">Descrição</button></div>
+    <div class="ebook"><img src="Pegasusfogo.jpg"Livro 10"><div class="ebook-title">Pegasus e o fogo do Olimpo (Olimpo em guerra Livro 1)</div><div class="ebook-title">R$ 56,38</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='descricaofogoolimpo.html'">Descrição</button></div>
+    <div class="ebook"><img src="pegasusnovosolimpos.jpg" alt="Livro 10"><div class="ebook-title">Pegasus e os novos olímpicos</div><div class="ebook-title">R$ 35,50</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='descricaopegasusnovosolimpos.html'">Descrição</button></div>
+    
+  </div>
+  <h1 style="margin-left: 60px;">Livros de autores locais</h1>
+  <div class="ebook-container">
+    
+    <div class="ebook">
+      <img src="Contos de Elfo (1).png" alt="contos de Elfo" />
+      <div class="ebook-title">Contos de Elfo</div>
+      <div class="ebook-title">R$ 36,90</div>
+      <button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button>
+      <button class="description-button" onclick="window.location.href='descriçao.html'">Descrição</button>
+    </div>
+
+    
+    <div class="ebook"><img src="limbo.jpg" alt="Limbo"><div class="ebook-title">Limbo</div><div class="ebook-title">R$ 56,30</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='limbo.html'">Descrição</button></div>
+    <div class="ebook"><img src="leech.jpg" alt="leech"><div class="ebook-title">Leech</div><div class="ebook-title">R$ 32,90</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='leech.html'">Descrição</button></div>
+    <div class="ebook"><img src="Sementes (1).png" alt="Lirio"><div class="ebook-title">Sementes</div><div class="ebook-title">R$ 39,50</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='Sementes.html'">Descrição</button></div>
+    <div class="ebook"><img src="Memórias de Sara.jpg" alt="memorias de sara"><div class="ebook-title">Memorias de sara</div><div class="ebook-title">R$ 40,90</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='memorias.html'">Descrição</button></div>
+    <div class="ebook"><img src="O Homenzinho de Papel Em Sua Jornada.jpg" alt="Livro 5"><div class="ebook-title">O Homenzinho de papel em sua Jornada</div><div class="ebook-title">R$ 17,90</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='homenzinho.html'">Descrição</button></div>
+    <div class="ebook"><img src="a_lenda.png" alt="Operária"><div class="ebook-title">A lenda de ouro</div><div class="ebook-title">R$ 55,90</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='a lenda de ouro.html'">Descrição</button></div>
+    <div class="ebook"><img src="Perdidos na Noite.jpg" alt="perdido"><div class="ebook-title">Perdidos na Noite</div><div class="ebook-title">R$ 21,90</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='perdido.html'">Descrição</button></div>
+    <div class="ebook"><img src="O Último Corvo.jpg" alt="corvo"><div class="ebook-title">O último corvo</div><div class="ebook-title">R$ 35,90</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='ultimo.html'">Descrição</button></div>
+    <div class="ebook"><img src="Kitsune e o Fantástico Mundo dos Sonhos.jpg" alt="Kitsune e o Fantástico Mundo dos Sonhos"><div class="ebook-title">Kitsune e o Fantástico Mundo dos Sonhos</div><div class="ebook-title" >R$ 44,90</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='Kitsune.html'">Descrição</button></div>
+    <div class="ebook"><img src="SHAPE, SHAKE, SHAKESPEARE.jpg"><div class="ebook-title">SHAPE, SHAKE, SHAKESPEARE</div><div class="ebook-title">R$ 26,90</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='shakespeare.html'">Descrição</button></div>
+    <div class="ebook"><img src="Cidade Holograma.jpg" alt="Cidade Holograma"><div class="ebook-title">Cidade Holograma</div><div class="ebook-title">R$ 17,90</div><button class="buy-button" onclick="window.location.href='pagamentos.html'">Comprar</button><button class="description-button" onclick="window.location.href='Cidade.html'">Descrição</button></div>
+    <footer>
+    <p><strong>Biblioteca das Nuvens – Sua Biblioteca Digital</strong></p>
+    <p>Explore uma vasta coleção de e-books para todos os gostos e interesses. Acesse, leia e aproveite a praticidade da leitura digital!</p>
+    <p>
+      🔗 <a href="mailto:email@example.com">Contato</a> |
+      <a href="suporte.html">Suporte</a> |
+      <a href="redes-sociais.html">Redes Sociais</a>
+    </p>
+    
+  </footer>
+  <script>
+    const slides = document.querySelectorAll(".carousel-slide");
+    let currentIndex = 0;
+
+    function showNextSlide() {
+      slides[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add("active");
+    }
+
+    setInterval(showNextSlide, 4000); 
+  </script>
+
+</body>
+</html>
+
+

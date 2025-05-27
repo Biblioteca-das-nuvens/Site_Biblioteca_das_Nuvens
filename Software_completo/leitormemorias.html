@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de E-Book</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 80px;
+            background-image: url(ChatGPT\ Image\ 30\ de\ abr.\ de\ 2025\,\ 15_07_47.png);
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            width: 100%;
+            height: 70px;
+            top: 0;
+            left: 0;
+            background: #B3C7E6;
+            color: white;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .imagem_logo {
+            height: 60px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #ebookContainer {
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            height: 70vh;
+            overflow-y: auto;
+        }
+
+        .zoom-container {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .zoom-container img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .zoom-container:hover img {
+            transform: scale(1.2);
+            cursor: zoom-in;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                justify-content: center;
+            }
+
+            .imagem_logo {
+                height: 50px;
+            }
+
+            #ebookContainer {
+                height: 60vh;
+            }
+
+            button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_biblioteca_das_nuvens.png" alt="Logo da Biblioteca das Nuvens" class="imagem_logo">
+    </header>
+
+    <main>
+        <div id="ebookContainer"></div>
+        <div class="navigation">
+            <button id="prevPage" disabled>Anterior</button>
+            <button id="nextPage">Próxima</button>
+        </div>
+    </main>
+
+    <script>
+        const pages = [
+            `<h2>Memorias de Sara</h2><div class="zoom-container"><img src="memoria de sara_page-0001.jpg" alt="Página 1"></div>`,
+            
+        ];
+
+        let currentPage = 0;
+
+        function showPage() {
+            document.getElementById('ebookContainer').innerHTML = pages[currentPage];
+            document.getElementById('prevPage').disabled = currentPage === 0;
+            document.getElementById('nextPage').disabled = currentPage >= pages.length - 1;
+        }
+
+        document.getElementById('prevPage').addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                showPage();
+            }
+        });
+
+        document.getElementById('nextPage').addEventListener('click', () => {
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                showPage();
+            }
+        });
+
+        showPage();
+    </script>
+</body>
+</html>

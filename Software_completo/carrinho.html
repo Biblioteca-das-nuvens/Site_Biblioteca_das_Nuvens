@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #FAEECB;
+            padding-top: 80px;
+            padding-bottom: 120px;
+        }
+
+        header {
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            background: #b3c7e6;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .imagem_logo {
+            height: 70px;
+        }
+
+        .carrinho {
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .produto {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+
+        .produto img {
+            width: 80px;
+            height: auto;
+        }
+
+        .detalhes {
+            flex: 1;
+            margin-left: 15px;
+            min-width: 200px;
+        }
+
+        .quantidade {
+            width: 60px;
+            margin-left: 10px;
+        }
+
+        .button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background: #fad9a8;
+            height: 100px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .produto {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .detalhes {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .quantidade {
+                margin-top: 5px;
+            }
+
+            .button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_biblioteca_das_nuvens.png" class="imagem_logo" alt="Logo">
+    </header>
+
+    <div class="carrinho">
+        <h2>Seu Carrinho</h2>
+        <div id="lista-carrinho">
+           
+        </div>
+        <p><strong>Total: R$ <span id="total">0</span>,00</strong></p>
+        <button onclick="window.location.href='pagamentos.html'"class="button">Finalizar Compra</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Biblioteca das Nuvens</p>
+    </footer>
+
+    <script>
+        let carrinho = [
+            { nome: "E-book 1", preco: 36, descricao: "Aprenda sobre programação", imagem: "contos de elfo (1).png", quantidade: 1 },
+            { nome: "E-book 2", preco: 56, descricao: "Guia de marketing digital", imagem: "limbo.jpg", quantidade: 1 }
+        ];
+
+        function atualizarCarrinho() {
+            const lista = document.getElementById('lista-carrinho');
+            lista.innerHTML = '';
+            let total = 0;
+
+            carrinho.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.classList.add('produto');
+                div.innerHTML = `
+                    <img src="${item.imagem}" alt="${item.nome}">
+                    <div class="detalhes">
+                        <strong>${item.nome}</strong>
+                        <p>${item.descricao}</p>
+                        <p>Preço: R$ ${item.preco},00</p>
+                        <label>Quantidade:
+                            <input type="number" class="quantidade" value="${item.quantidade}" min="1" onchange="atualizarTotal(${index})">
+                        </label>
+                    </div>
+                `;
+                lista.appendChild(div);
+                total += item.preco * item.quantidade;
+            });
+
+            document.getElementById('total').textContent = total;
+        }
+
+        function atualizarTotal(index) {
+            const input = document.querySelectorAll('.quantidade')[index];
+            carrinho[index].quantidade = Number(input.value);
+            const total = carrinho.reduce((sum, item) => sum + item.preco * item.quantidade, 0);
+            document.getElementById('total').textContent = total;
+        }
+
+        function checkout() {
+            alert('Redirecionando para o pagamento...');
+        }
+
+        atualizarCarrinho();
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do E-book</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #faeecb;
+            margin: 0;
+            padding-top: 80px;
+            padding-bottom: 120px;
+        }
+
+        header {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background: #b3c7e6;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .imagem_logo {
+            height: 70px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        strong {
+            color: #222;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background: #fad9a8;
+            height: 100px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo_biblioteca_das_nuvens.png" alt="Logo Biblioteca das Nuvens" class="imagem_logo">
+    </header>
+
+    <div class="container">
+        <h1>Detalhes do E-book</h1>
+        <p><strong>Título:</strong> Contos de Elfo</p>
+        <p><strong>Autor:</strong> Erica Guiller</p>
+        <p><strong>Descrição:</strong> Contos de Elfo é uma coletânea mágica e encantadora que nos leva ao coração das florestas misteriosas e reinos ocultos onde vivem seres imortais e sábios: os elfos..</p>
+        <button onclick="window.location.href='ebooks/ebook1.pdf'">
+            📥 Baixar E-book
+        </button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Biblioteca das Nuvens</p>
+    </footer>
+
+</body>
+</html>

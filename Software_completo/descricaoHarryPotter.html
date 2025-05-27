@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harry Potter | Biblioteca das Nuvens</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faeecb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #b3c7e6;
+            height: 70px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 40px;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border: none;
+            background-color: #fad9a8;
+            color: #333;
+            padding: 0 15px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #fdfbfb;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 100px auto 40px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .top-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .description-content {
+            flex: 2;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            display: flex;
+            gap: 20px;
+        }
+
+        .book-image {
+            width: 300px;
+            border-radius: 8px;
+        }
+
+        .purchase-box {
+            flex: 1;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .purchase-image {
+            width: 200px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .preview-button, .purchase-box button, .submit-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .preview-button:hover,
+        .purchase-box button:hover,
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+
+        .audio-container {
+            margin-top: 15px;
+        }
+
+        .review-section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .review-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .review-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .review-section label {
+            font-weight: 600;
+        }
+
+        .review-section input,
+        .review-section select,
+        .review-section textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .reviews-container {
+            margin-top: 20px;
+        }
+
+        .review {
+            border-top: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .top-section {
+                flex-direction: column;
+            }
+
+            .description-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .book-image, .purchase-image {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_biblioteca_das_nuvens.png" alt="Logo Biblioteca das Nuvens">
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <button>🔍</button>
+        </div>
+        <nav>
+            <a href="iiindex.html ">Início</a>
+            <a href="formulario.html">Entrar</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="top-section">
+            <div class="description-content">
+                <img src="harrypotter.jpg" alt="Capa do livro Contos de Elfo" class="book-image">
+                <div>
+                    <h1>Harry Potter</h1>
+                    <p><strong>Autor:</strong> Por kimberly F.</p>
+                    <p><strong>Gênero:</strong> Ficção, Mistério, Aventura</p>
+                    <p> Embarque em uma jornada única e apaixonante por "Além do Mapa do Maroto: Explorando as Curiosidades Mais Fascinantes de Harry Potter". Descubra segredos ocultos, personagens inesquecíveis e histórias fascinantes que vão além das páginas dos livros de Harry Potter. Explore a Escola de Magia e Bruxaria de Hogwarts em detalhes, desvende os mistérios do Beco Diagonal e mergulhe no mundo das criaturas mágicas. </p>
+                    <ul>
+                        <li>Personagens cativantes.</li>
+                        <li>Reviravoltas surpreendentes.</li>
+                        <li>Narrativa envolvente.</li>
+                    </ul>
+                    <p><em>Adquira agora e mergulhe nessa aventura inesquecível!</em></p>
+                    <div class="audio-container">
+                        <p>Ouça um resumo do livro:</p>
+                        <audio controls>
+                            <source src="harry potter.mp3" type="audio/mp3">
+                            Seu navegador não suporta áudio.
+                        </audio>
+                    </div>
+                    <button class="preview-button" onclick="window.location.href='leitor.html'">Ler Prévia</button>
+                </div>
+            </div>
+
+            <div class="purchase-box">
+                <img src="harrypotter.jpg" alt="Capa do livro Harry Potter" class="purchase-image">
+                <h2>Compre Agora</h2>
+                <p><strong>Preço:</strong> R$ 32,50</p>
+                <button onclick="window.location.href='carrinho.html'">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+
+        <div class="review-section">
+            <h2>Deixe sua avaliação</h2>
+            <form id="review-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required>
+
+                <label for="rating">Nota:</label>
+                <select id="rating" required>
+                    <option value="5">5 estrelas ★★★★★</option>
+                    <option value="4">4 estrelas ★★★★☆</option>
+                    <option value="3">3 estrelas ★★★☆☆</option>
+                    <option value="2">2 estrelas ★★☆☆☆</option>
+                    <option value="1">1 estrela ★☆☆☆☆</option>
+                </select>
+
+                <label for="comment">Comentário:</label>
+                <textarea id="comment" rows="4" required></textarea>
+
+                <button type="submit" class="submit-button">Enviar Avaliação</button>
+            </form>
+
+            <div id="reviews-container" class="reviews-container">
+                <h3>Avaliações de leitores</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("review-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const rating = document.getElementById("rating").value;
+            const comment = document.getElementById("comment").value;
+
+            const review = document.createElement("div");
+            review.classList.add("review");
+            review.innerHTML = `<strong>${name}</strong> - ${rating} estrela(s)<br><p>${comment}</p>`;
+            document.getElementById("reviews-container").appendChild(review);
+
+            document.getElementById("review-form").reset();
+        });
+    </script>
+</body>
+</html>
